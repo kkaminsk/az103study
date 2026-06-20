@@ -6,17 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **content repository**, not a software project. It holds study guides for Microsoft exam **AI-103 — "Developing AI Apps and Agents on Azure"** (the successor to AI-102, which retires 2026-06-30). There is no build, lint, or test tooling — the deliverables are the Markdown files themselves.
 
-Each numbered file covers one official exam domain. The numbering is stable; treat it as the file-to-domain contract:
+Each numbered file covers one official exam domain. The files are numbered in **suggested study order** (weight-first), not in official exam-domain order; treat this table as the file-to-domain contract:
 
 | File | Exam domain | Weight |
 |---|---|---|
-| `1.md` | Plan and manage an Azure AI solution | 25–30% |
-| `2.md` | Implement generative AI and agentic solutions | 30–35% |
-| `3.md` | Implement text analysis solutions (speech is a **subsection inside** this domain, not its own) | 10–15% |
-| `4.md` | Implement computer vision solutions | 10–15% |
-| `5.md` | Implement information extraction solutions | 10–15% |
+| `1.md` | Implement generative AI and agentic solutions | 30–35% |
+| `2.md` | Plan and manage an Azure AI solution | 25–30% |
+| `3.md` | Implement information extraction solutions | 10–15% |
+| `4.md` | Implement text analysis solutions (speech is a **subsection inside** this domain, not its own) | 10–15% |
+| `5.md` | Implement computer vision solutions | 10–15% |
 
-`README.md` is a placeholder (title only).
+`README.md` documents the guide set, weighting, and high-leverage facts.
 
 ## Core constraint: factual accuracy against Microsoft Learn
 
