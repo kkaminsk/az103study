@@ -1,6 +1,6 @@
 # AI-103 Study Guides: Developing AI Apps and Agents on Azure
 
-A set of dense, fact-checked study guides for Microsoft **Exam AI-103: Developing AI Apps and Agents on Azure**, which leads to the **Microsoft Certified: Azure AI Apps and Agents Developer Associate** certification. AI-103 is the successor to **AI-102** (*Designing and Implementing a Microsoft Azure AI Solution*), which **retires June 30, 2026**.
+A set of dense, fact-checked study guides for Microsoft **[Exam AI-103: Developing AI Apps and Agents on Azure](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103)**, which leads to the **[Microsoft Certified: Azure AI Apps and Agents Developer Associate](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/)** certification. AI-103 is the successor to **AI-102** (*Designing and Implementing a Microsoft Azure AI Solution*), which **retires June 30, 2026**.
 
 Each guide maps to one official exam domain, built around the platform now called **Microsoft Foundry** (formerly *Azure AI Foundry*, earlier *Azure AI Studio*). The skills outlines referenced here are the blueprint dated **April 16, 2026**.
 
@@ -41,4 +41,12 @@ These claims drift fast as Microsoft renames and re-scopes services through 2026
 
 These guides make specific, drift-prone claims about Foundry, Azure AI Search, deployment types, RBAC roles, quotas, and guardrails. Every factual claim should be verifiable against current Microsoft Learn documentation. The guides are fact-checked per file; some open with a dated **"Accuracy note (verified \<month year\>)"** block recording when the check happened.
 
-The guides carry **no inline citations or Sources sections**: claims are stated directly in prose and verified against Microsoft Learn rather than linked.
+Each guide links its key services to the relevant Microsoft Learn pages, both inline on first mention and in a **"Further reading"** section at the end. The links target the current docs (new Microsoft Foundry under `azure/foundry`, the individual "Foundry Tools" services under `azure/ai-services`), and were verified live in June 2026.
+
+## Further reading
+
+- [Exam AI-103 study guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103)
+- [Microsoft Certified: Azure AI Apps and Agents Developer Associate](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/)
+- [Course AI-103T00-A: Develop AI apps and agents on Azure](https://learn.microsoft.com/en-us/training/courses/ai-103t00)
+- [What is Microsoft Foundry?](https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry)
+- [Microsoft Foundry documentation](https://learn.microsoft.com/en-us/azure/foundry/)

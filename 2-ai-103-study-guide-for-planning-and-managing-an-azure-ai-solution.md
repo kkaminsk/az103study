@@ -4,9 +4,9 @@
 
 This guide covers the **“Plan and manage an Azure AI solution”** domain of AI-103, which Microsoft lists at **25–30%** of the exam. The official skills outline for this domain includes model and service selection, retrieval and indexing, Foundry setup and deployment, CI/CD integration, monitoring and security, and responsible AI governance for generative AI and agentic systems. Microsoft also notes that **most exam questions target generally available features**, but **preview features can appear if they are commonly used**, which matters because several Foundry capabilities in this area are still preview.
 
-The best way to study this domain is to think like an architect and platform owner, not just like a prompt engineer. Microsoft describes the target audience as an Azure AI engineer who **builds, manages, and deploys agents and AI solutions** with Microsoft Foundry, collaborating with architects, DevOps engineers, and security engineers. In practice, that means AI-103 expects you to justify **why** a particular service, model, deployment type, identity pattern, or monitoring strategy fits a scenario.
+The best way to study this domain is to think like an architect and platform owner, not just like a prompt engineer. Microsoft describes the target audience as an Azure AI engineer who **builds, manages, and deploys agents and AI solutions** with [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry), collaborating with architects, DevOps engineers, and security engineers. In practice, that means AI-103 expects you to justify **why** a particular service, model, deployment type, identity pattern, or monitoring strategy fits a scenario.
 
-A useful mental model is that **Microsoft Foundry** is the main application factory, while **Azure AI Search**, **Foundry Tools**, **Azure Monitor/Application Insights**, **Azure API Management via AI Gateway**, and sometimes **Azure Machine Learning** extend it for retrieval, multimodal extraction, observability, governance, and classical ML explainability. Foundry itself is positioned as a unified Azure platform that brings together **agents, models, tools, tracing, monitoring, evaluations, RBAC, networking, and policy controls** under a single management model.
+A useful mental model is that **Microsoft Foundry** is the main application factory, while **[Azure AI Search](https://learn.microsoft.com/en-us/azure/search/)**, **Foundry Tools**, **Azure Monitor/Application Insights**, **Azure API Management via AI Gateway**, and sometimes **Azure Machine Learning** extend it for retrieval, multimodal extraction, observability, governance, and classical ML explainability. Foundry itself is positioned as a unified Azure platform that brings together **agents, models, tools, tracing, monitoring, evaluations, RBAC, networking, and policy controls** under a single management model.
 
 ## Choosing models, Foundry services, and tools
 
@@ -22,14 +22,14 @@ For **service selection**, keep this mapping in mind:
 
 | Need | Best-fit service or capability | Why it fits |
 |---|---|---|
-| Chat completion, reasoning, embeddings, model hosting | **Foundry Models** | Central model catalog, deployment, evaluation, and model comparison workflows. |
-| Stateful agents, tools, conversations, publishing | **Foundry Agent Service** | Agents, conversations, and responses are first-class runtime components. |
+| Chat completion, reasoning, embeddings, model hosting | **[Foundry Models](https://learn.microsoft.com/en-us/azure/foundry/concepts/foundry-models-overview)** | Central model catalog, deployment, evaluation, and model comparison workflows. |
+| Stateful agents, tools, conversations, publishing | **[Foundry Agent Service](https://learn.microsoft.com/en-us/azure/foundry/agents/overview)** | Agents, conversations, and responses are first-class runtime components. |
 | Grounding, hybrid/vector retrieval, agentic retrieval | **Azure AI Search** | Native support for vector search, hybrid search, semantic reranking, and agentic retrieval patterns. |
 | Permission-aware reusable knowledge layer | **Foundry IQ** | Managed knowledge layer with knowledge bases and knowledge sources for agents. |
 | External tools and data sources | **MCP tool / Toolbox / project connections** | Standardized integration of remote tools and centralized auth. |
-| Structured document extraction | **Document Intelligence** | Deterministic extraction of text, tables, and key-value pairs. |
-| Complex multimodal extraction from docs, images, audio, video | **Content Understanding** | Generative AI based analyzers for unstructured and multimodal content. |
-| Harmful-content detection and moderation | **Azure AI Content Safety / Foundry guardrails** | Text, image, multimodal moderation plus guardrails and custom categories. |
+| Structured document extraction | **[Document Intelligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)** | Deterministic extraction of text, tables, and key-value pairs. |
+| Complex multimodal extraction from docs, images, audio, video | **[Content Understanding](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/overview)** | Generative AI based analyzers for unstructured and multimodal content. |
+| Harmful-content detection and moderation | **[Azure AI Content Safety](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview) / Foundry guardrails** | Text, image, multimodal moderation plus guardrails and custom categories. |
 
 A recurring exam pattern is the difference between **built-in agent tools** and **custom tools**. Foundry Agent Service provides built-in tools such as **web search**, **code interpreter**, **Azure AI Search**, and file search, while custom/MCP tools let you connect external APIs and tool servers. If the scenario needs **real-time public web grounding**, Microsoft explicitly calls **web search** the recommended built-in method. If it needs internal corpora or citations over enterprise data, prefer **Azure AI Search** or **Foundry IQ**.
 
@@ -145,3 +145,16 @@ If you only memorize a small set of high-yield ideas from this domain, make it t
 Several capabilities relevant to this domain are still documented as **preview** or have preview subfeatures, including **agentic retrieval in the portal** (its REST API is now GA), **model leaderboards**, **managed compute deployments**, some **agent guardrails** (e.g., tool-call/tool-response intervention points, spotlighting, groundedness for agents), the **Agent Monitoring Dashboard**, and **hosted-agent session management**. Microsoft’s AI-103 study guide explicitly says preview features can appear on the exam if they are commonly used, so you should study the concepts and tradeoffs, but answer production-design questions carefully when the prompt asks for a **GA-only** solution.
 
 The exam outline uses the phrase **“explanation tooling”** in this domain, but Microsoft’s clearest first-party documentation for that phrase today is in **Azure Machine Learning’s Responsible AI dashboard**, not directly in Foundry-native LLM observability. For study purposes, treat this as a signal that AI-103 expects you to understand how a broader Azure AI solution can mix **Foundry for generative/agentic apps** with **Azure Machine Learning for classical model explanation and fairness analysis**.
+
+## Further reading
+
+Microsoft Learn pages for this domain (verified June 2026):
+
+- [What is Microsoft Foundry?](https://learn.microsoft.com/en-us/azure/foundry/what-is-foundry)
+- [Microsoft Foundry architecture](https://learn.microsoft.com/en-us/azure/foundry/concepts/architecture)
+- [Microsoft Foundry Models overview](https://learn.microsoft.com/en-us/azure/foundry/concepts/foundry-models-overview)
+- [What is Microsoft Foundry Agent Service?](https://learn.microsoft.com/en-us/azure/foundry/agents/overview)
+- [Get started with Microsoft Foundry SDKs and endpoints](https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/sdk-overview)
+- [Azure AI Search documentation](https://learn.microsoft.com/en-us/azure/search/)
+- [What is Azure AI Content Safety?](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview)
+- [Exam AI-103 study guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103)

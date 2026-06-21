@@ -23,10 +23,10 @@ For this domain you must be fluent in four building blocks and know exactly wher
 
 | Service / capability | Use it when the scenario is… | Why it fits |
 |---|---|---|
-| **Azure AI Search** | You need an index, retrieval at scale, vector/hybrid/semantic queries, or grounding for RAG and agents | The retrieval engine: indexers, skillsets, vector and hybrid search, semantic ranking, agentic retrieval, knowledge stores |
-| **Azure AI Document Intelligence** (Form Recognizer) | You need **deterministic** field extraction, layout, tables, and key-value pairs from forms and structured documents | Prebuilt + custom models with confidence scores and bounding regions; strongest for invoices, receipts, IDs, contracts |
-| **Azure Content Understanding** (Foundry Tool) | You need **generative, schema-driven** structured output from mixed/unstructured content (documents, images, audio, video) | Analyzers that turn raw multimodal content into markdown/JSON fields, RAG-ready and grounded |
-| **Azure Vision OCR / image analysis** | You need text or visual features pulled from images to feed an index or policy engine | OCR (Read) skill and image analysis as enrichment steps inside a skillset |
+| **[Azure AI Search](https://learn.microsoft.com/en-us/azure/search/)** | You need an index, retrieval at scale, vector/hybrid/semantic queries, or grounding for RAG and agents | The retrieval engine: indexers, skillsets, vector and hybrid search, semantic ranking, agentic retrieval, knowledge stores |
+| **[Azure AI Document Intelligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)** (Form Recognizer) | You need **deterministic** field extraction, layout, tables, and key-value pairs from forms and structured documents | Prebuilt + custom models with confidence scores and bounding regions; strongest for invoices, receipts, IDs, contracts |
+| **[Azure Content Understanding](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/overview)** (Foundry Tool) | You need **generative, schema-driven** structured output from mixed/unstructured content (documents, images, audio, video) | Analyzers that turn raw multimodal content into markdown/JSON fields, RAG-ready and grounded |
+| **[Azure Vision OCR / image analysis](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis)** | You need text or visual features pulled from images to feed an index or policy engine | OCR (Read) skill and image analysis as enrichment steps inside a skillset |
 
 The single most testable distinction in this domain is **Document Intelligence vs. Content Understanding**. Choose **Document Intelligence** when the requirement is precise, repeatable extraction of *known fields* from *structured forms* with confidence scores (an invoice total, a policy number, a signature region). Choose **Content Understanding** when the requirement is to turn *messy, mixed, or multimodal* content into a *user-defined schema or LLM-ready markdown* for downstream RAG or agents. A second high-value distinction is **classic RAG vs. agentic retrieval**, covered below.
 
@@ -39,7 +39,7 @@ Azure AI Search supports two ingestion models, and choosing correctly is a recur
 - **Pull model (indexers).** Use an **indexer** when Search can crawl a supported source for you. Built-in indexers exist for **Azure Blob Storage, ADLS Gen2, Azure SQL, Cosmos DB, Azure Table Storage, OneLake, and SharePoint Online**, among others. Indexers can run on demand or on a schedule, support **incremental/change-tracking** refresh, and can attach a **skillset** for enrichment. Microsoft notes indexers can run as often as every five minutes, so for content that changes faster than that, you need the push model.
 - **Push model (REST/SDK).** Use the **push model** when updates are too frequent for a schedule, when your data has no supported indexer, or when you already compute embeddings in your own pipeline. You upload JSON documents directly to the index via the REST API or SDK. The push model gives you the lowest-latency updates and full control, at the cost of writing the ingestion code yourself.
 
-For **non-text media**, remember that Search indexes *text and vectors*, not raw audio or video. The pattern is to **preprocess first, then index**: transcribe audio/video with **Azure Speech** or **Azure AI Video Indexer** (or a **Content Understanding** audio/video analyzer), extract key frames or captions for images, and then push or pull the resulting text and embeddings into the index. Images can also be ingested directly into a multimodal pipeline (see enrichment below), where they are OCR’d, captioned/verbalized, and embedded.
+For **non-text media**, remember that Search indexes *text and vectors*, not raw audio or video. The pattern is to **preprocess first, then index**: transcribe audio/video with **[Azure Speech](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview)** or **Azure AI Video Indexer** (or a **Content Understanding** audio/video analyzer), extract key frames or captions for images, and then push or pull the resulting text and embeddings into the index. Images can also be ingested directly into a multimodal pipeline (see enrichment below), where they are OCR’d, captioned/verbalized, and embedded.
 
 ### Semantic, hybrid, and vector search for grounding
 
@@ -173,3 +173,16 @@ Study in the order the official objectives use, building one small end-to-end pi
 3. **Agentic retrieval.** Stand up a knowledge base / knowledge agent and observe query decomposition and citation output.
 4. **Document extraction.** Extract typed fields with a **Document Intelligence** prebuilt model, then re-do a messy document with a **Content Understanding** analyzer and compare deterministic fields vs. generative markdown.
 5. **Wire it to an agent.** Attach the index (or Foundry IQ) to a Foundry agent and verify grounded answers with citations.
+
+## Further reading
+
+Microsoft Learn pages for this domain (verified June 2026):
+
+- [Azure AI Search documentation](https://learn.microsoft.com/en-us/azure/search/)
+- [Introduction to Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search)
+- [What is Azure AI Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)
+- [Document Intelligence document processing models](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/model-overview?view=doc-intel-4.0.0)
+- [What is Azure Content Understanding in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/overview)
+- [What is Image Analysis? (Azure Vision)](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis)
+- [What is Azure Speech?](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview)
+- [Exam AI-103 study guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103)
