@@ -2,6 +2,8 @@
 
 > **Slide deck:** A companion presentation for this guide is available at [`Slides/3-Architecting_Information_Extraction.pptx`](Slides/3-Architecting_Information_Extraction.pptx).
 
+> **Podcast episode:** A companion audio deep-dive for this guide is available at [Azure AI Extraction and Search Architecture](https://stbighatpodcasts.blob.core.windows.net/podcasts/3-Azure_AI_Extraction_and_Search_Architecture.m4a).
+
 ## Scope and exam framing
 
 This guide covers the **“Implement information extraction solutions”** domain of AI-103, which Microsoft weights at **10–15%** of the exam in the skills outline dated **April 16, 2026**. This is a distinct, standalone domain, it is *not* part of the text-analysis or computer-vision domains, even though it shares services with both. Microsoft’s official sub-objectives for this domain fall into two clusters:

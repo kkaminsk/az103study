@@ -2,6 +2,8 @@
 
 > **Slide deck:** A companion presentation for this guide is available at [`Slides/1-AI-103_Agent_Engineering.pptx`](Slides/1-AI-103_Agent_Engineering.pptx).
 
+> **Podcast episode:** A companion audio deep-dive for this guide is available at [The Microsoft AI-103 Agent Blueprint](https://stbighatpodcasts.blob.core.windows.net/podcasts/1-The_Microsoft_AI_103_agent_blueprint.m4a).
+
 > **Accuracy note (verified June 2026).** This guide was fact-checked against current Microsoft Learn documentation. Key context to anchor your study:
 > - **Exam:** AI-103, *Developing AI Apps and Agents on Azure*, leads to the **Microsoft Certified: Azure AI Apps and Agents Developer Associate** certification. It is the successor to **AI-102** (*Designing and Implementing a Microsoft Azure AI Solution* / Azure AI Engineer Associate), which **retires June 30, 2026**; the matching legacy course AI-102T00 retires April 30, 2026.
 > - **Platform rebrand:** *Azure AI Foundry* (and earlier *Azure AI Studio*) is now **Microsoft Foundry** (announced at Ignite, Nov 2025). Older materials saying "Azure AI Foundry" or "Azure AI Studio" are using superseded names.

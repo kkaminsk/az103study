@@ -2,6 +2,8 @@
 
 > **Slide deck:** A companion presentation for this guide is available at [`Slides/5-AI-103_Computer_Vision_Mastery.pptx`](Slides/5-AI-103_Computer_Vision_Mastery.pptx).
 
+> **Podcast episode:** A companion audio deep-dive for this guide is available at [Azure Vision Architecture for AI-103](https://stbighatpodcasts.blob.core.windows.net/podcasts/5-Azure_Vision_Architecture_for_AI-103.m4a).
+
 ## Scope and exam framing
 
 This guide is aligned to **Exam AI-103: Developing AI Apps and Agents on Azure**. In Microsoft’s current study guide, the domain **“Implement computer vision solutions”** is weighted at **10–15%** of the exam, and the listed objectives exactly include the image generation, video generation, multimodal understanding, Content Understanding, and responsible AI topics you provided. Microsoft also states that most exam questions target general availability features, but the exam can still include preview features if they are commonly used.
